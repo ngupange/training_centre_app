@@ -214,7 +214,7 @@ def seed_db():
         theclass=class1,
         student=student3,
         enrollment_date=(datetime.date(datetime.now())),
-        Grade="A"
+        grade="A"
     )
     db.session.add(enroll1)
 
@@ -222,7 +222,7 @@ def seed_db():
         theclass=class2,
         student=student1,
         enrollment_date=(datetime.date(datetime.now())),
-        Grade="C"
+        grade="C"
     )
     db.session.add(enroll2)
 
@@ -230,7 +230,7 @@ def seed_db():
         theclass=class3,
         student=student2,
         enrollment_date=(datetime.date(datetime.now())),
-        Grade="D"
+        grade="D"
     )
     db.session.add(enroll3)
     db.session.commit()

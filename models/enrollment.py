@@ -8,9 +8,7 @@ class Enrollment(db.Model):
 
     # Columns
     enrollment_id = Column(Integer, primary_key=True)
-    class_id = Column(Integer, ForeignKey(
-        'classes.class_id'), nullable=False, unique=True)
-    student_id = Column(Integer, ForeignKey(
-        'students.student_id'), nullable=False, unique=True)
+    class_id = Column(Integer, ForeignKey('classes.class_id'), nullable=False, unique=True)
+    student_id = Column(Integer, ForeignKey('students.student_id'), nullable=False, unique=True)
     enrollment_date = Column(Date)
-    Grade = Column(String)
+    grade = Column(String)
