@@ -14,6 +14,8 @@ def create_app():
 
     app.config.from_object("config.app_config")
 
+    app.config['JSON_SORT_KEYS'] = False
+
     db.init_app(app)
     bcrypt.init_app(app)
 

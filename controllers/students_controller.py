@@ -14,10 +14,11 @@ def get_students():
     result = students_schema.dump(students_list)
     return jsonify(result)
 
+
 @students.route("/<int:id>", methods=["GET"])
 def get_student(id):
     student = Student.query.get(id)
     if not student:
         return {"error": "student id not found"}
     result = student_schema.dump(student)
-    return jsonify(result) 
+    return jsonify(result)

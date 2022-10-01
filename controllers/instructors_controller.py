@@ -9,7 +9,6 @@ instructors = Blueprint('instructors', __name__, url_prefix="/instructors")
 
 @instructors.route("/", methods=["GET"])
 def get_instructors():
-    # get all the books from the database
     instructors_list = Instructor.query.all()
     result = instructors_schema.dump(instructors_list)
     return jsonify(result)
