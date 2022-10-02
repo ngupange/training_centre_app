@@ -18,5 +18,6 @@ class TheClass(db.Model):
     #relationship
     enrollments = db.relationship(
         "Enrollment",
-        backref = "theclass"
+        backref = "theclass",
+        cascade="all, delete"
     )

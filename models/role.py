@@ -14,5 +14,6 @@ class Role(db.Model):
     # relationship
     users = db.relationship(
         "User",
-        backref="role"
+        backref="role",
+        cascade="all, delete"
     )

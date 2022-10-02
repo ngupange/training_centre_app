@@ -14,5 +14,6 @@ class Subject(db.Model):
     # relationship
     classes = db.relationship(
         "TheClass",
-        backref="subject"
+        backref="subject",
+        cascade="all, delete"
     )

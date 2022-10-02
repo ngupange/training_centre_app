@@ -16,5 +16,6 @@ class Instructor(db.Model):
     # relationship
     classes = db.relationship(
         "TheClass",
-        backref="instructor"
+        backref="instructor",
+        cascade="all, delete"
     )

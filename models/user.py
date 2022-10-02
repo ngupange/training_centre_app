@@ -17,7 +17,7 @@ class User(db.Model):
     mobile = Column(String)
     username = Column(String, nullable=False, unique=True)
     password = Column(String, nullable=False)
-    role_id = Column(Integer, ForeignKey('roles.role_id'))
+    role_id = Column(Integer, ForeignKey('roles.role_id'), default = 4)
 
     # relationship
     students = db.relationship(
@@ -26,5 +26,6 @@ class User(db.Model):
     )
     instructors = db.relationship(
         "Instructor",
-        backref = "user"
+        backref = "user",
+        cascade="all, delete"
     )
