@@ -13,7 +13,6 @@ def get_student_grade(id):
     cl.subject_id = sub.subject_id JOIN enrollments enr ON enr.class_id = cl.class_id 
     JOIN students std ON std.student_id = enr.student_id JOIN users usr ON 
     usr.user_id = std.user_id AND std.student_id = :val''')
-    ordered = True
     result = db.engine.execute(codesql, {"val": id})
     var = json.dumps([dict(r) for r in result], sort_keys=False, indent=2)
     if var == "[]":

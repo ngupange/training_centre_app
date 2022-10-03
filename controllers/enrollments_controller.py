@@ -11,7 +11,7 @@ enrollments = Blueprint('enrollments', __name__, url_prefix="/enrollments")
 def get_enrollments():
     enrollments_list = Enrollment.query.all()
     result = enrollments_schema.dump(enrollments_list)
-    return jsonify(result)
+    return jsonify(result), 200
 
 
 @enrollments.route("/<int:id>", methods=["GET"])
@@ -20,4 +20,4 @@ def get_enrollment(id):
     if not enrollment:
         return {"error": "enrollment id not found"}
     result = enrollment_schema.dump(enrollment)
-    return jsonify(result)
+    return jsonify(result), 200
