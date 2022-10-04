@@ -1,11 +1,11 @@
 from flask import Blueprint, jsonify, request
 from main import db
-from models.enrollment import Enrollment
 from schemas.enrollment_schema import enrollment_schema, enrollments_schema
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from models.the_class import TheClass
 from models.student import Student
 from models.user import User
+from models.enrollment import Enrollment
 from datetime import date
 from marshmallow.exceptions import ValidationError
 
