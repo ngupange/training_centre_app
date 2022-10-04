@@ -20,6 +20,9 @@ def get_student_grade(id):
     return var
 
 # Grade for all students
+
+# Owners and Admin only (FIX !!!!!!!!!!!!!!)
+
 @grades.route("/student", methods=["GET"])
 def get_students_grade():
     codesql = text('''SELECT usr.first_name, usr.last_name, sub.title as Subject, enr.grade 

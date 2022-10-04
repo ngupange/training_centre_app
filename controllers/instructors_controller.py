@@ -4,7 +4,7 @@ from models.instructor import Instructor
 from schemas.instructor_schema import instructor_schema, instructors_schema
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from models.user import User
-from datetime import date, datetime
+from datetime import date
 
 
 instructors = Blueprint('instructors', __name__, url_prefix="/instructors")
@@ -63,10 +63,10 @@ def get_activate_instructor(id):
 
     instructor_fields = instructor_schema.load(request.json)
     instructor = Instructor(
-        status = instructor_fields["status"]
+        status = instructor_fields["status"],
+        hire_date = date.today()
     )
     instructor.user_id = id
-    hire_date = (datetime.date(datetime.now()))
     db.session.add(instructor)
     user.role_id = 2
     db.session.commit()
