@@ -48,19 +48,20 @@ def add_enrollment():
         test2 = Student.query.filter_by(student_id = student.student_id).first()
         if not test2:
             return jsonify("There is no student with that ID"), 409
-        else:
-            # return {"error": "No Class at this momement"}, 404
-            grade = request.json['grade']
-            new_enrollment = Enrollment(
-                class_id = class_id,
-                student_id = student.student_id,
-                enrollment_date = date.today(),
-                grade = "Wait"
+        
+        #Check if there is another active enrollment
+        test3 = Enrollment.query.filter_by(student_id = test2.student_id, class_id = class_id , status = True).first()
+        if test3 :            
+            return {"error": "Sorry You are alredy enrolled in this class"}, 409
+        new_enrollment = Enrollment(
+            class_id = class_id,
+            student_id = student.student_id,
+            enrollment_date = date.today(),
             )
-            db.session.add(new_enrollment)
+        db.session.add(new_enrollment)
 
-            db.session.commit()
-            return jsonify(message="You are Enrolled"), 201
+        db.session.commit()
+        return jsonify(message="You are Enrolled"), 201
     except KeyError:
         return jsonify(message='Check your input'), 400
         

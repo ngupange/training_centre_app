@@ -1,5 +1,5 @@
 from main import db
-from sqlalchemy import Column, Integer, String, Date, ForeignKey, UniqueConstraint
+from sqlalchemy import Column, Integer, String, Date, ForeignKey, UniqueConstraint, Boolean
 
 
 class Enrollment(db.Model):
@@ -11,5 +11,6 @@ class Enrollment(db.Model):
     class_id = Column(Integer, ForeignKey('classes.class_id'), nullable=False)
     student_id = Column(Integer, ForeignKey('students.student_id'), nullable=False)
     enrollment_date = Column(Date)
-    grade = Column(String)
+    grade = Column(String, default = "Not Yet")
+    status = Column(Boolean, default = True)
     UniqueConstraint('class_id', 'student_id', "enrollment_date", name='enrollment_unique_key')

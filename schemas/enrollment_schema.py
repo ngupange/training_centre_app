@@ -8,7 +8,7 @@ class EnrollmentSchema(ma.Schema):
     class Meta:
         ordered = True
         fields = ("enrollment_id", "theclass",
-                  "student", "enrollment_date", "grade")
+                  "student", "enrollment_date", "grade", "status")
     theclass = fields.Nested(ClassSchema, only=("class_id", ))
     student = fields.Nested(StudentSchema, only=("student_id", ))
 
