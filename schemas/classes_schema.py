@@ -8,7 +8,7 @@ class ClassSchema(ma.Schema):
     class Meta:
         ordered = True
         fields = ("class_id", "instructor", "subject",
-                  "status", "delivery_mode", "details")
+                  "status", "delivery_mode", "detail")
     instructor = fields.Nested(InstructorSchema, only=("instructor_id",))
     subject = fields.Nested(SubjectSchema, only=("title",))
 

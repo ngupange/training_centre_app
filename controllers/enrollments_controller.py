@@ -36,7 +36,7 @@ def add_enrollment():
         
         current_id = get_jwt_identity() 
         class_id = request.json['class_id']
-
+        # print ("Current id === ", current_id)
         # Checking class you want to enroll into exists ...
         test = TheClass.query.filter_by(class_id = class_id).first()
         if not test:
@@ -44,6 +44,9 @@ def add_enrollment():
         
         #Checking if the user trying to enroll is a student ...
         user = User.query.filter_by(user_id = current_id).first()
+        if not user:
+            return {"error": "You are not a student so you can't enrol"}, 409
+        # print ("Current id === ", user.user_id)
         student = Student.query.filter_by(user_id = user.user_id).first()
         test2 = Student.query.filter_by(student_id = student.student_id).first()
         if not test2:
@@ -61,8 +64,8 @@ def add_enrollment():
         db.session.add(new_enrollment)
 
         db.session.commit()
-        return jsonify(message="You are Enrolled"), 201
-    except KeyError:
+        return jsonify(message="Your enrollement is successfull"), 201
+    except Exception:
         return jsonify(message='Check your input'), 400
         
 @enrollments.errorhandler(ValidationError)
