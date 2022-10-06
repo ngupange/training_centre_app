@@ -12,3 +12,5 @@ Nowadays, it is desirable for any public or private entity with an educational o
 This API will help student to enrol in a class, get their results / grade. Instructor will be able to grade their student and API has an Admin who will be in charge of creating classes and assign instructors to them. There is much to improve on this API in future. 
 
 # Why is it a problem that needs solving?
+
+The original intention of this API was to create something that will help me to learn and feel more comfortable with Python and web development. With other skills I will get in next term my plan is to make this functional and any school in need may use it. We will add more task 
