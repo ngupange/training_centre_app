@@ -27,7 +27,7 @@ def get_student(id):
     student = Student.query.get(id)
     #Check if Id provided as parameter exist in Students Database
     if not student:
-        return {"error": "student id not found"}
+        return {"error": "student id not found"}, 404
     
     # Check if the signed in user is the owner of the record so he or she can visualise her data
     if str(student.user_id) == current_id:
