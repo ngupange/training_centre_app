@@ -63,3 +63,22 @@ def create_subject():
     db.session.commit()
 
     return jsonify(subject_schema.dump(subject))
+
+
+#DELETE and a subject
+@subjects.route("/<int:id>", methods=["DELETE"])
+@jwt_required()
+def delete_subject(id):
+    if get_jwt_identity() != "Admin":
+        return {"error": "You don't have the right credentials to see this. SORRY!"}, 401
+    
+    subject = Subject.query.get(id)
+    if not subject:
+        return {"error": "subject id not found"}
+
+    # delete the subject from the database
+    db.session.delete(subject)
+    #save the changes in the database
+    db.session.commit()
+
+    return {"message": "subject removed successfully"}
