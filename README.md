@@ -14,3 +14,20 @@ This API will help student to enrol in a class, get their results / grade. Instr
 # Why is it a problem that needs solving?
 
 The original intention of this API was to create something that will help me to learn and feel more comfortable with Python and web development. With other skills I will get in next term my plan is to make this functional and any school in need may use it. We will add more task 
+
+# Why have you chosen this database system. What are the drawbacks compared to others?
+
+I chose to develop this API using PostgreSQL as my database system because of many reasons here are some:  
+
+- Postgres is an open-source DB
+- Highly extensible
+- It is easy to deal with complex data types like geodata for GPS
+- Flexible text search 
+- Ability to create functions, triggers, data types etc. 
+- Supports JSON 
+- It’ is cross-platform 
+
+Here are some desadvantages:
+
+- Not available by default on all hosts 
+- It is a bit slower compared to other RDBMS’s speed
