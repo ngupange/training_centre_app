@@ -71,11 +71,10 @@ To develop this API I used Flask any third part I instolled was compatible with 
 - ***Psycopg2:*** This helps our API to connect to our database (Postgres). It is in charge of safe connection between app and DB.
 - ***SQLAlchemy :*** Essentially, SQLAlchemy is the Python SQL toolkit that gives developers the ability to use the SQL database. . The advantage of using this special library is that the Python developer can work with language-specific objects rather than having to create separate SQL queries. Essentially, you can use SQLAlchemy in python to access and manipulate databases.
 
-- 
 ---
 ## R8 Describe your projects models in terms of the relationships they have with each other
 
-- *** A user *** can be have one and only one ** role **
+- ***A user*** can be have one and only one **role**
 
 
 ---
