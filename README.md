@@ -78,22 +78,23 @@ In this project I will be tracking 7 tables :
 
 - #### 1. Roles ####
     - This Table will have 4 differents users role an ***Admin*** in charge of the system, A ***student***, an ***instructor***, ***user*** who will be a default role for any user who sign in before he gets approved by admin Roles table will hold 3 details about each record.
-        - *role id*: as a primary key to identifies each subject
-        - *role*: a title of role
-        - *description:* Explanation about user or some comments about a specific user.
+        - ***Role Id***: as a primary key to identifies each subject
+        - ***Role***: a title of role
+        - ***Description:*** Explanation about user or some comments about a specific user.
 
 - #### 2. Users ####
     - This table will save all details about person who use this system. In order to achieve this user must have an account and password to be authenticated. Here are some details we will track:
-        - *User ID* : helps to have unique user 
-        - *First Name, Last Name, Date of birth as dob* : as idefication of a user,
-        - *E-mail, Mobile number* : Helps to capture user's contact details 
-        - *Username, password, role_id* : This will hels in authenticating and authorisation for certains task.
+        - ***User ID*** : helps to have unique user 
+        - ***First Name, Last Name, Date of birth as dob*** : as idefication of a user,
+        - ***E-mail, Mobile number*** : Helps to capture user's contact details 
+        - ***Username, password, role_id*** : This will hels in authenticating and authorisation for certains task.
 
 - #### 3. Students ####
-    - This table will save 
+    - This table will save all records regarding students users this table has relationship with user and Enrolments. This tble will capture 4 inputs per each record:
+        - *
 
 - #### 4. Instructors ####
-    - This table will save 
+    - ==This table will save== 
 ---
 ## R9 Discuss the database relations to be implemented in your application
 
