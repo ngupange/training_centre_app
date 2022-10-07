@@ -7,9 +7,9 @@ class TheClass(db.Model):
 
 	#Columns
     class_id = Column(Integer, primary_key=True)
-    instructor_id = Column(Integer, ForeignKey('instructors.instructor_id'), 
-            nullable = False)
     subject_id = Column(Integer, ForeignKey('subjects.subject_id'), 
+            nullable = False)
+    instructor_id = Column(Integer, ForeignKey('instructors.instructor_id'), 
             nullable = False)
     status = Column(Boolean, default = True)
     delivery_mode = Column(String)
