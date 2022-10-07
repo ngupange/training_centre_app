@@ -74,8 +74,13 @@ To develop this API I used Flask any third part I instolled was compatible with 
 ---
 ## R8 Describe your projects models in terms of the relationships they have with each other
 
-- ***A user*** can be have one and only one **role**
-
+- A **user** can have one and only one **role**, but a **role** can held by many **users**. (1 - 1)
+- An **Instructor** can have a single account each / **user** and and an account / **user** is for a single **instructor** (1 -1)
+- A **Student** can have a single account or **user** and an account / **user** is for a single **user** (1 - 1)
+- A **Subject** can be taught in many **classes**, but a **class** can be about one **Subject**. (1-M) this relationship is a result of a many to many relationship between subject and an instructor. Instructor can teach many subject and one subject can be taught by many instuctors (M-M)
+- An **Instructor** can teach many **classes**, but every **class** has one instructor. (1-M)
+- A **Student** can enroll in many **enrollments**, but an **enrollment** is for a single **student** only.
+- An **enrollment** is for a single **class** and a **class** can have many **enrollments** (1-M). tgis relationship is a result of a ***Many to Many*** relationship between class and student where a student can attends many classes and each class has many students. 
 
 ---
 ## R9 Discuss the database relations to be implemented in your application
