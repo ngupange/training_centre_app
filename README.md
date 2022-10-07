@@ -77,10 +77,10 @@ To develop this API I used Flask any third part I instolled was compatible with 
 In this project I will be tracking 7 tables :
 
 - #### Roles ####
-This API will have 4 differents users role an *Admin* in charge of the system, A *student*, an *instructor*, *user* who will be a default role for any user who sign in before he gets approved by admin Roles table will hold 3 details about each record.
--- *role id*: as a primary key to identifies each subject
--- *role*: a title of role
--- *description:* Explanation about user or some comments about a specific user.
+    - This API will have 4 differents users role an *Admin* in charge of the system, A *student*, an *instructor*, *user* who will be a default role for any user who sign in before he gets approved by admin Roles table will hold 3 details about each record.
+        - *role id*: as a primary key to identifies each subject
+        - *role*: a title of role
+        - *description:* Explanation about user or some comments about a specific user.
 ---
 ## R9 Discuss the database relations to be implemented in your application
 
