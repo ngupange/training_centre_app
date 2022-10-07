@@ -75,6 +75,7 @@ To develop this API I used Flask any third part I instolled was compatible with 
 ---
 ## R8 Describe your projects models in terms of the relationships they have with each other
 
+- *** A user *** can be have one and only one ** role **
 
 
 ---
