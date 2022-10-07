@@ -31,3 +31,10 @@ Here are some desadvantages:
 
 - Not available by default on all hosts 
 - It is a bit slower compared to other RDBMS’s speed
+
+# Identify and discuss the key functionalities and benefits of an ORM
+
+An object-relational mapper (ORM) is a technique that allows a developer to query and manipulate data in a database using an object-oriented paradigm. To develop an application connected to a database normally requires database skills (SQL) on top of the programming language skills.
+ORM is used to manipulate data (CRUD) between app and database but with ORM you only need programming language skills to manipulate objects in source codes and transform them into a database. Mapping is a tedious thing that you can use to automate the ORM to make it independent of the database you want to use, and you can even change the database management system without a problem. There is no need to learn SQL to perform databases tasks.
+
+But these are not all good things ORM also has its drawbacks. In highly loaded environments, this can reduce performance because you add an extra layer to the system. It also involves learning the ORM so you can use it, which can take time to fully understand and take advantage of it
