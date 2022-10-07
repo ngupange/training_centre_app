@@ -97,11 +97,31 @@ In this project I will be tracking 7 tables :
         - ***Status :***  When Student record created starts with a default value of *FALSE* this will change when Admin approve the application to become a student then Status will turns to True and if student is banned to use the system we can change status without delete his record.
 
 - #### 4. Instructors ####
-    - This table will save all record about our instructors. after signin to the system sn admin will assign a role to a pending user and make him an instructor. This table will collect 4 different input per each record:
-      - ***instructor_id :*** Primary key to identify instructors
-      - ***user_id :*** Has a relashionship with users  table.
-      - ***Hire_date :*** Authomatically will grabe today's date and save it
+    - This table will save all record about our instructors. after signed in to the system an admin will assign a role to a pending user and make him an instructor. This table will collect 4 different input per each record:
+      - ***Instructor Id :*** Primary key to identify instructors
+      - ***User Id :*** Has a relashionship with users  table.
+      - ***Hire Date :*** Automatically will grab today's date and save it
       - ***Status :*** Has a default value of false for each new record till Admin change it. this will also used in logic when we  checking if the instructor's account is active.
+
+- #### 5. Subjects ####
+    - This table is in charge of saving all about Subject. This will track 4 inputs for each record:
+      - ***Subject ID :*** A Primary key for this table
+      - ***Title :*** Title of the subject
+      - ***Credits :*** Number of credits that coure has
+      - ***Description :*** Details about this Subject
+
+- #### 6. Classes ####
+    - This table is a joint table between Subject and instructor and will save following data:
+      - 
+    ***Class Id :***  Primary Key  
+    ***Subject Id :*** Foreign key because one subject may have more than one class
+    ***Instructor Id :*** Foreign key because an Instructor may tutor more than one class
+    ***Status :*** If class is running or is a graduated obe
+    ***Delivery Mode :*** Now days some classes are in physical class room, online, on site this field will record way of class being delivered
+    ***Detail :*** Some details or comments about class
+- #### 7. Enrollments ####
+    - This table is join table which represents relationship between classes table and Students. A class is taken by many students and one student can attend many classes. Here are some record to track about this table:
+      - 
 ---
 ## R9 Discuss the database relations to be implemented in your application
 
