@@ -74,6 +74,16 @@ To develop this API I used Flask any third part I instolled was compatible with 
 ---
 ## R8 Describe your projects models in terms of the relationships they have with each other
 
+In this project I will be tracking 7 tables :
+
+- #### Roles ####
+This API will have 4 differents users role an *Admin* in charge of the system, A *student*, an *instructor*, *user* who will be a default role for any user who sign in before he gets approved by admin Roles table will hold 3 details about each record.
+-- *role id*: as a primary key to identifies each subject
+-- *role*: a title of role
+-- *description:* Explanation about user or some comments about a specific user.
+---
+## R9 Discuss the database relations to be implemented in your application
+
 - A **user** can have one and only one **role**, but a **role** can held by many **users**. (1 - 1)
 - An **Instructor** can have a single account each (**user**) and and an account (**user**) is for a single **instructor** (1 -1)
 - A **Student** can have a single account (**user**) and an account(**user**) is for a single **Student** (1 - 1)
@@ -83,12 +93,7 @@ To develop this API I used Flask any third part I instolled was compatible with 
 - An **enrollment** is for a single **class** and a **class** can have many **enrollments** (1-M). This relationship is a result of a ***Many to Many*** relationship between *class* and *student* where a ***student*** can attends many ***classes*** and each ***class*** has many ***students***. 
 
 ---
-## R9 Discuss the database relations to be implemented in your application
-
-
-
-
----
 ## R10 Describe the way tasks are allocated and tracked in your project
-
+The tasks and features comprised of this project are broken down, implemented and tracked through trello board. Following an agile methodology.
+Link to trello board: [Click here](https://trello.com/b/PpCH5HJm)
 
