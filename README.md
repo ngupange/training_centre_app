@@ -77,7 +77,7 @@ To develop this API I used Flask any third part I instolled was compatible with 
 In this project I will be tracking 7 tables :
 
 - #### 1. Roles ####
-    - This Table will have 4 differents users role an ***Admin*** in charge of the system, A ***student***, an ***instructor***, ***user*** who will be a default role for any user who sign in before he gets approved by admin Roles table will hold 3 details about each record.
+    - This Table will have 4 differents users role an ***Admin*** in charge of the system, A ***student***, an ***instructor*** and a ***user*** who will be a default role for any user who sign in before he gets approved by admin. Roles table will hold 3 details about each record.
         - ***Role Id***: as a primary key to identifies each subject
         - ***Role***: a title of role
         - ***Description:*** Explanation about user or some comments about a specific user.
@@ -87,14 +87,21 @@ In this project I will be tracking 7 tables :
         - ***User ID*** : helps to have unique user 
         - ***First Name, Last Name, Date of birth as dob*** : as idefication of a user,
         - ***E-mail, Mobile number*** : Helps to capture user's contact details 
-        - ***Username, password, role_id*** : This will hels in authenticating and authorisation for certains task.
+        - ***Username, password, role_id*** : This will help in authenticating and authorisation for certains task. Password is hashed for security reason.
 
 - #### 3. Students ####
-    - This table will save all records regarding students users this table has relationship with user and Enrolments. This tble will capture 4 inputs per each record:
-        - *
+    - This table will save all records regarding student users this table has relationship with user and Enrolments. This table will capture 4 inputs per each record:
+        - ***Student_id :*** As a primary key to enforce uniqueness 
+        - ***User_id :*** is a Foreign Key to hold all values about student's accounts details from user table.
+        - ***Level :*** What is the highest level this student achieved. 
+        - ***Status :***  When Student record created starts with a default value of *FALSE* this will change when Admin approve the application to become a student then Status will turns to True and if student is banned to use the system we can change status without delete his record.
 
 - #### 4. Instructors ####
-    - ==This table will save== 
+    - This table will save all record about our instructors. after signin to the system sn admin will assign a role to a pending user and make him an instructor. This table will collect 4 different input per each record:
+      - ***instructor_id :*** Primary key to identify instructors
+      - ***user_id :*** Has a relashionship with users  table.
+      - ***Hire_date :*** Authomatically will grabe today's date and save it
+      - ***Status :*** Has a default value of false for each new record till Admin change it. this will also used in logic when we  checking if the instructor's account is active.
 ---
 ## R9 Discuss the database relations to be implemented in your application
 
