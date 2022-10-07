@@ -121,7 +121,12 @@ In this project I will be tracking 7 tables :
     ***Detail :*** Some details or comments about class
 - #### 7. Enrollments ####
     - This table is join table which represents relationship between classes table and Students. A class is taken by many students and one student can attend many classes. Here are some record to track about this table:
-      - 
+    - Enrollment Id :
+    - Class Id 
+    - Student Id
+    - Enrollment Date:
+    - Grade 
+    - Status = Column(Boolean, default = True)
 ---
 ## R9 Discuss the database relations to be implemented in your application
 
